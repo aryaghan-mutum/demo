@@ -20,6 +20,9 @@ public class DropDownTest extends BaseTest {
         driver.get("http://output.jsbin.com/osebed/2");
         myPage.selectItems(driver).selectByVisibleText("Orange");
         myPage.selectItems(driver).selectByIndex(1);
+        boolean isSelectedMultipleOption = myPage.selectItems(driver).isMultiple();
+        Assertions.assertEquals(isSelectedMultipleOption, true);
+
     }
 
     /**
