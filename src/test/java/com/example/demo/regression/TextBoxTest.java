@@ -15,8 +15,9 @@ public class TextBoxTest extends BaseTest {
         driver.get("http://facebook.com");
 
         // note:
-        // the username and password must not be writte in the test level but
-        // must be encripted or stored in a property file. T
+        // the username and password must not be written in the test level but
+        // must be encripted or stored in a property file due to security reasons while
+        // testing the apps
         final String username = "apple";
         final String password = "interview";
 
@@ -28,6 +29,8 @@ public class TextBoxTest extends BaseTest {
 
         // clicking on a button
         facebookLoginPage.clickLoginBtn(driver);
+        // after clicking we can validate in many ways. For ex: if it opens a new page then
+        // we can verify the url or title of page.
 
     }
 }
