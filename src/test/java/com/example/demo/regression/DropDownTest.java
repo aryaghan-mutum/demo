@@ -7,22 +7,25 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
+/**
+ * author: Anurag Muthyam
+ * github: https://github.com/aryaghan-mutum
+ */
 public class DropDownTest extends BaseTest {
 
     private MyPage myPage;
 
     /**
-     * Selects any element in the drodown for testing piurposes
+     * Selects multiple elements in the dropdown for testing puposes
      */
     @Test
-    public void testSettingTextToTextBox() {
+    public void testMultipleOptionByIdAndText() {
         myPage = new MyPage();
         driver.get("http://output.jsbin.com/osebed/2");
         myPage.selectItems(driver).selectByVisibleText("Orange");
         myPage.selectItems(driver).selectByIndex(1);
         boolean isSelectedMultipleOption = myPage.selectItems(driver).isMultiple();
         Assertions.assertEquals(isSelectedMultipleOption, true);
-
     }
 
     /**

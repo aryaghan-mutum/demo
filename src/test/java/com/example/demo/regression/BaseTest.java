@@ -7,6 +7,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+/**
+ * author: Anurag Muthyam
+ * github: https://github.com/aryaghan-mutum
+ */
+
 public class BaseTest {
 
     public SoftAssertions softAssertion;
