@@ -2,6 +2,7 @@ package com.example.demo.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class FacebookLoginPage {
 
@@ -11,7 +12,29 @@ public class FacebookLoginPage {
 
 
     /**
-     *
+     * Get username text from text box
+     * @param driver
+     * @return
+     */
+    public String getUserName(WebDriver driver) {
+        WebElement webElement = driver.findElement(By.xpath(fbUserNameTextBox));
+        String username = webElement.getAttribute("value");
+        return username;
+    }
+
+    /**
+     * Get password text from text box
+     * @param driver
+     * @return
+     */
+    public String getPassword(WebDriver driver) {
+        WebElement webElement = driver.findElement(By.name(fbPasswordTextBox));
+        String pass = webElement.getAttribute("value");
+        return pass;
+    }
+
+    /**
+     * Set username
      * @param driver
      * @param username
      * @return
@@ -22,7 +45,7 @@ public class FacebookLoginPage {
     }
 
     /**
-     *
+     * Set password
      * @param driver
      * @param password
      * @return
@@ -33,7 +56,7 @@ public class FacebookLoginPage {
     }
 
     /**
-     *
+     * Click the button
      * @param driver
      * @return
      */
