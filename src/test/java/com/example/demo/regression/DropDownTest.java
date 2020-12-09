@@ -31,7 +31,7 @@ public class DropDownTest extends BaseTest {
     public void testFirstOption() {
         myPage = new MyPage();
         driver.get("http://output.jsbin.com/osebed/2");
-        WebElement option = myPage.selectItems(driver).getFirstSelectedOption();
+        WebElement option = myPage.selectFirstItem(driver).getFirstSelectedOption();
         Assertions.assertEquals(option.getText(), "Banana");
     }
 

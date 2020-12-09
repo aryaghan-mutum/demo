@@ -13,6 +13,18 @@ public class MyPage {
      * @param driver
      * @return
      */
+    public Select selectFirstItem(WebDriver driver) {
+        Select fruits = new Select(driver.findElement(By.id(dropDownId)));
+        fruits.selectByVisibleText("Banana");
+        fruits.selectByIndex(1);
+        return fruits;
+    }
+
+    /**
+     *
+     * @param driver
+     * @return
+     */
     public Select selectItems(WebDriver driver) {
         Select fruits = new Select(driver.findElement(By.id(dropDownId)));
         return fruits;
