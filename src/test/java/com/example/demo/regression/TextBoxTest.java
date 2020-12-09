@@ -14,11 +14,17 @@ public class TextBoxTest extends BaseTest {
         facebookLoginPage = new FacebookLoginPage();
         driver.get("http://facebook.com");
 
-        facebookLoginPage.setUsername(driver, "apple");
-        facebookLoginPage.setPassword(driver, "interview");
+        // note:
+        // the username and password must not be writte in the test level but
+        // must be encripted or stored in a property file. T
+        final String username = "apple";
+        final String password = "interview";
 
-        Assertions.assertEquals(facebookLoginPage.getUserName(driver), "apple");
-        Assertions.assertEquals(facebookLoginPage.getPassword(driver), "interview");
+        facebookLoginPage.setUsername(driver, username);
+        facebookLoginPage.setPassword(driver, password);
+
+        Assertions.assertEquals(facebookLoginPage.getUserName(driver), username);
+        Assertions.assertEquals(facebookLoginPage.getPassword(driver), password);
 
         // clicking on a button
         facebookLoginPage.clickLoginBtn(driver);
