@@ -1,0 +1,48 @@
+plugins {
+	id 'org.springframework.boot' version '2.4.0'
+	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+	id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	testImplementation("org.junit.jupiter:junit-jupiter:${junit_jupiter_version}")
+	implementation("org.junit.jupiter:junit-jupiter-params:${junit_jupiter_params_version}")
+	implementation("org.junit.jupiter:junit-jupiter-api:${junit_jupiter_api_version}")
+	implementation("org.junit.jupiter:junit-jupiter-engine:${junit_jupiter_engine_version}")
+	implementation("io.qameta.allure:allure-junit5:${allure_junit_version}")
+	implementation "org.assertj:assertj-core:${assertj_version}"
+	implementation "com.github.javafaker:javafaker:${faker_version}"
+	implementation "io.rest-assured:rest-assured:${rest_assured_version}"
+	implementation "org.springframework.boot:spring-boot-starter-data-jpa:${spring_boot_version}"
+	implementation "io.qameta.allure:allure-selenide:${allure_selenide_version}"
+	implementation "com.experitest:appium-seetest-extension:+"
+
+	compile "com.codeborne:selenide:${selenide_version}"
+	compile "com.google.code.gson:gson:${gson_version}" // Json parsing api
+	compile group: 'org.springframework', name: 'spring-core', version: "${spring_version}"
+	compile "org.springframework:spring-core:${spring_version}"
+	compile "org.springframework:spring-context:${spring_version}"
+	compile "org.springframework.boot:spring-boot-starter-webflux:${spring_boot_version}"
+	compile group: 'io.qameta.allure', name: 'allure-java-commons', version: "${allure_version}"
+	compile "mysql:mysql-connector-java:${my_sql_version}"
+
+
+}
+
+test {
+	useJUnitPlatform()
+}
