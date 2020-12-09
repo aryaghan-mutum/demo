@@ -9,17 +9,17 @@ public class TextBoxTest extends BaseTest {
     //reference
     private FacebookLoginPage facebookLoginPage;
 
+    // note:
+    // the username and password must not be written in the test level but
+    // must be encripted or stored in a property file due to security reasons while
+    // testing the apps
+    final String username = "apple";
+    final String password = "interview";
+
     @Test
     public void testTextBox() {
         facebookLoginPage = new FacebookLoginPage();
         driver.get("http://facebook.com");
-
-        // note:
-        // the username and password must not be written in the test level but
-        // must be encripted or stored in a property file due to security reasons while
-        // testing the apps
-        final String username = "apple";
-        final String password = "interview";
 
         facebookLoginPage.setUsername(driver, username);
         facebookLoginPage.setPassword(driver, password);
