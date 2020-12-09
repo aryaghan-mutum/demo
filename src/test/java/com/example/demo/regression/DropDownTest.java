@@ -11,6 +11,9 @@ public class DropDownTest extends BaseTest {
 
     private MyPage myPage;
 
+    /**
+     * Selects any element in the drodown for testing piurposes
+     */
     @Test
     public void testSettingTextToTextBox() {
         myPage = new MyPage();
@@ -19,6 +22,9 @@ public class DropDownTest extends BaseTest {
         myPage.selectItems(driver).selectByIndex(1);
     }
 
+    /**
+     * Gets a total number of options/items from the dropdown elements and validates the size
+     */
     @Test
     public void testTotalSizeOfOptions() {
         myPage = new MyPage();
@@ -27,6 +33,10 @@ public class DropDownTest extends BaseTest {
         Assertions.assertEquals(actualSize, 4);
     }
 
+    /**
+     * A simple test to test the text of the first option in the dropdown.
+     * If it is not the same the test fails
+     */
     @Test
     public void testFirstOption() {
         myPage = new MyPage();
