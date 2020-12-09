@@ -35,6 +35,13 @@ public class DropDownTest extends BaseTest {
         Assertions.assertEquals(option.getText(), "Banana");
     }
 
+
+    /**
+     * Validate all the options in the dropdown in not null or empty
+     * if one of the option is empty then the test fails.
+     * used: hard assertions.
+     * NOTE: Soft assertion can also be used here to see how many options are null in the logs
+     */
     @Test
     public void testAllOptionNamesIsEmpty() {
         myPage = new MyPage();
